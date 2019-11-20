@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dialog_Practice</string>
+    <string name="title_activity_credit">Credit</string>
+    <string name="title_activity_credits2">Credits2</string>
 </resources>

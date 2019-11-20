@@ -14,12 +14,13 @@
         android:layout_weight="10" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="10"
-        android:text="Button"
-        android:layout_height="0dp" />
+        android:onClick="message"
+        android:text="message" />
 
     <Space
         android:layout_width="match_parent"
@@ -27,12 +28,13 @@
         android:layout_weight="10" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/message_icon"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="10"
-        android:text="Button" />
+        android:onClick="message_icon"
+        android:text="message_icon" />
 
     <Space
         android:layout_width="match_parent"
@@ -40,12 +42,13 @@
         android:layout_weight="10" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        android:id="@+id/message_icon_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="10"
-        android:layout_height="0dp"
-        android:text="Button" />
+        android:onClick="message_icon_button"
+        android:text="message_icon_button" />
 
     <Space
         android:layout_width="match_parent"
@@ -53,12 +56,13 @@
         android:layout_weight="10" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
+        android:id="@+id/random_color"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="10"
-        android:layout_height="0dp"
-        android:text="Button" />
+        android:onClick="random_color"
+        android:text="random_color" />
 
     <Space
         android:layout_width="match_parent"
@@ -66,10 +70,11 @@
         android:layout_weight="10" />
 
     <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
+        android:id="@+id/random_color_reset"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_gravity="center"
         android:layout_weight="10"
-        android:text="Button" />
+        android:onClick="random_color_reset"
+        android:text="random_color_reset" />
 </LinearLayout>
