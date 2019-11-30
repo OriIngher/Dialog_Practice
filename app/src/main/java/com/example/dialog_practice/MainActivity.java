@@ -11,11 +11,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
 import java.util.Random;
 
+/**
+ * @author oriin
+ */
 
 public class MainActivity extends AppCompatActivity {
-AlertDialog.Builder adb1,adb2,adb3,adb4,adb5;
+AlertDialog.Builder adb1;
+AlertDialog adb2;
 LinearLayout ll;
 Random rd;
 int color;
@@ -31,6 +37,10 @@ int color;
 
     }
 
+    /**
+     *
+     * @param view
+     */
     public void message(View view) {
         adb1 = new AlertDialog.Builder(this);
         adb1.setMessage("This Is A Simple Alert");
@@ -39,39 +49,51 @@ int color;
 
     }
 
+    /**
+     *
+     * @param view
+     */
     public void message_icon(View view) {
-        adb2 = new AlertDialog.Builder(this);
+        adb2 = new AlertDialog.Builder(this).create();
+        adb2.setTitle(".");
         adb2.setMessage("This Is A Simple Alert");
         adb2.setIcon(R.drawable.tomato);
-        AlertDialog ad2 = adb2.create();
-        ad2.show();
+        adb2.show();
     }
 
+    /**
+     *
+     * @param view
+     */
     public void message_icon_button(View view) {
-        adb3 = new AlertDialog.Builder(this);
-        adb3.setMessage("This Is A Simple Alert");
-        adb3.setIcon(R.drawable.tomato);
-        adb3.setPositiveButton("Press Button To Close", new DialogInterface.OnClickListener() {
+        adb1 = new AlertDialog.Builder(this);
+        adb1.setMessage("This Is A Simple Alert");
+        adb1.setIcon(R.drawable.tomato);
+        adb1.setPositiveButton("Press Button To Close", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
             }
         });
-        AlertDialog ad3 = adb3.create();
+        AlertDialog ad3 = adb1.create();
         ad3.show();
     }
 
+    /**
+     *
+     * @param view
+     */
     public void random_color(View view) {
-        adb4 = new AlertDialog.Builder(this);
-        adb4.setMessage("This Is A Simple Alert");
-        adb4.setNegativeButton("Press Button To Close", new DialogInterface.OnClickListener() {
+        adb1 = new AlertDialog.Builder(this);
+        adb1.setMessage("This Is A Simple Alert");
+        adb1.setNegativeButton("Press Button To Close", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
 
             }
         });
-        adb4.setPositiveButton("Random color", new DialogInterface.OnClickListener() {
+        adb1.setPositiveButton("Random color", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 rd = new Random();
@@ -79,21 +101,25 @@ int color;
                 ll.setBackgroundColor(color);
             }
         });
-        AlertDialog ad4 = adb4.create();
+        AlertDialog ad4 = adb1.create();
         ad4.show();
     }
 
+    /**
+     *
+     * @param view
+     */
     public void random_color_reset(View view) {
-        adb5 = new AlertDialog.Builder(this);
-        adb5.setMessage("This Is A Simple Alert");
-        adb5.setNegativeButton("Press Button To Close", new DialogInterface.OnClickListener() {
+        adb1 = new AlertDialog.Builder(this);
+        adb1.setMessage("This Is A Simple Alert");
+        adb1.setNegativeButton("Press Button To Close", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
 
             }
         });
-        adb5.setPositiveButton("Random color", new DialogInterface.OnClickListener() {
+        adb1.setPositiveButton("Random color", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 rd = new Random();
@@ -102,20 +128,32 @@ int color;
             }
         });
 
-        adb5.setNeutralButton("White Color", new DialogInterface.OnClickListener() {
+        adb1.setNeutralButton("White Color", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                ll.setBackgroundColor(Color.WHITE);
             }
         });
-        AlertDialog ad5 = adb5.create();
+        AlertDialog ad5 = adb1.create();
         ad5.show();
     }
+
+    /**
+     *
+     * @param menu
+
+     */
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.main,menu);
         return true;
     }
+
+    /**
+     *
+     * @param item
+     * @return checks if "credits" button is pressed and if so moves to "credits" activity
+     */
     public boolean onOptionsItemSelected(MenuItem item)
     {
         int id = item.getItemId();
